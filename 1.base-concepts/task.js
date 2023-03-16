@@ -6,9 +6,7 @@ function solveEquation(a, b, c) {
   let rootTwo = (-b + Math.sqrt(d)) / (2 * a);
   let rootThree = (-b - Math.sqrt(d)) / (2 * a);
 
-  if (d < 0) {
-    arr = [];
-  } else if (d === 0) {
+  if (d === 0) {
     arr = [rootOne];
   } else if (d > 0) {
     arr = [rootTwo, rootThree];
@@ -17,11 +15,7 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  if (isNaN(percent)) {
-    return false;
-  } else if (isNaN(contribution)) {
-    return false;
-  } else if (isNaN(amount)) {
+  if (isNaN(percent) || isNaN(contribution) || isNaN(amount)) {
     return false;
   }
 
@@ -33,5 +27,3 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let totalAmount = payment * countMonths;
   return +totalAmount.toFixed(2);
 }
-
-calculateTotalMortgage();
