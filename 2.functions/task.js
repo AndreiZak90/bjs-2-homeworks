@@ -25,13 +25,11 @@ function summElementsWorker(...arr) {
     return 0;
   }
   let sum;
-  if (arr != []) {
-    initialValue = 0;
-    sum = arr.reduce(
-      (accumulator, currentValue) => accumulator + currentValue,
-      initialValue
-    );
-  }
+  initialValue = 0;
+  sum = arr.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    initialValue
+  );
   return sum;
 }
 
